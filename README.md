@@ -17,13 +17,13 @@ mac版本请移步至：https://github.com/jiwenxing/qiniu-image-tool
 
 ## Preview
 1. 本地图片文件上传 <br/>
-![](http://7xry05.com1.z0.glb.clouddn.com/201705061734_124.gif)
+![](https://github.com/jiwenxing/qiniu-image-tool-win/blob/master/res/file.gif?raw=true)
 
 2. 截图上传  <br/>
-![](http://7xry05.com1.z0.glb.clouddn.com/201705061741_202.gif)
+![](https://github.com/jiwenxing/qiniu-image-tool-win/blob/master/res/local.gif?raw=true)
 
 3. 其它文件上传  <br/>
-![](http://7xry05.com1.z0.glb.clouddn.com/201705061828_6.gif)
+![](https://raw.githubusercontent.com/jiwenxing/qiniu-image-tool-win/master/res/file.gif)
 
 > 演示gif使用wiznote及licecap制作
 
