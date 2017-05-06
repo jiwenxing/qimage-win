@@ -17,10 +17,10 @@ mac版本请移步至：https://github.com/jiwenxing/qiniu-image-tool
 
 ## Preview
 1. 本地图片文件上传 <br/>
-![](https://github.com/jiwenxing/qiniu-image-tool-win/blob/master/res/file.gif?raw=true)
+![](https://github.com/jiwenxing/qiniu-image-tool-win/blob/master/res/local.gif?raw=true)
 
 2. 截图上传  <br/>
-![](https://github.com/jiwenxing/qiniu-image-tool-win/blob/master/res/local.gif?raw=true)
+![](https://github.com/jiwenxing/qiniu-image-tool-win/blob/master/res/screenshot.gif?raw=true)
 
 3. 其它文件上传  <br/>
 ![](https://raw.githubusercontent.com/jiwenxing/qiniu-image-tool-win/master/res/file.gif)
