@@ -5,17 +5,17 @@ windows版本的markdown一键贴图工具，支持本地文件、截图及网�
 详细的使用教程请参考：[AutoHotkey&qshell 实现图片自动上传七牛并返回markdown引用](http://jverson.com/2016/08/30/autohotkey-markdown-uploadImage/)  
 mac版本请移步至：https://github.com/jiwenxing/qiniu-image-tool
 
-## Features
+# Features
 - 支持各种图片格式上传
 - 支持截图及网络图片直接复制上传
 - 支持包括js、css、视频等各种其它格式本地文件上传
 - AutoHotkey开放源码，完全免费
 - 安装使用非常简单
 
-## Requirements
+# Requirements
 **`qshell`**   **`AutoHotkey`** **`七牛账号`**
 
-## Preview
+# Preview
 1. 本地图片文件上传 <br/>
 ![](https://github.com/jiwenxing/qiniu-image-tool-win/blob/master/res/local.gif?raw=true)
 
