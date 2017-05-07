@@ -18,11 +18,11 @@ CHANGE LOG
 ^!V::
 
 	;;;; config start, you need to replace them by yours
-	ACCESS_KEY = G4T2TrlRFLf2-Da-IUrHJKSbVYbJTGpcwBVFbz3D
-	SECRET_KEY = 0wgbpmquurY_BndFuPvDGqzlnfWHCdL8YHjz_fHJ
+	ACCESS_KEY = G4T2TrlRFLf2-Da-IUrHJKSbVYbJTGpcwVFbz3D
+	SECRET_KEY = 0wgbpmquurY_BndFuPvDGqzlnfWHCdL8Hjz_fHJ
 	BUCKET_NAME = fortest  ;qiniu bucket name
 	BUCKET_DOMAIN = http://7xry05.com1.z0.glb.clouddn.com/  ;qiniu domain for the image
-	WORKING_DIR = E:\TOOLS\qiniu\  ;directory that you put the qshell.exe 
+	WORKING_DIR = D:\blog\qiniu-image-tool-win\  ;directory that you put the qshell.exe 
 	;;;; config end
 
 	;;;; datetime+randomNum as file name prefix
@@ -52,7 +52,7 @@ CHANGE LOG
 		;MsgBox, %pathAndName%
 		SetWorkingDir, %WORKING_DIR%
 		; here, thanks for https://github.com/octan3/img-clipboard-dump
-		RunWait, %comspec% /c powershell -sta -f dump-clipboard-png.ps1 %pathAndName%  && qshell fput %BUCKET_NAME% %filename% %pathAndName% && del %pathAndName%
+		RunWait, %comspec% /c powershell set-executionpolicy remotesigned && powershell -sta -f dump-clipboard-png.ps1 %pathAndName%  && qshell fput %BUCKET_NAME% %filename% %pathAndName% && del %pathAndName%
 	}
 
 	;;;; paste markdown format url to current editor
