@@ -25,6 +25,9 @@ CHANGE LOG
 	WORKING_DIR = D:\blog\qiniu-image-tool-win\  ;directory that you put the qshell.exe 
 	;;;; config end
 
+    ;;;; optional config
+    UP_HOST = http://up.qiniu.com
+
 	;;;; datetime+randomNum as file name prefix
 	Random, rand, 1, 1000
 	filePrefix =  %A_yyyy%%A_MM%%A_DD%%A_Hour%%A_Min%_%rand%
@@ -42,7 +45,7 @@ CHANGE LOG
 	    filename = %filePrefix%.%fileType%
 		; To run multiple commands consecutively, use "&&" between each
 		SetWorkingDir, %WORKING_DIR% 
-		RunWait, %comspec% /c qshell account %ACCESS_KEY% %SECRET_KEY% && qshell fput %BUCKET_NAME% %filename% %clipboard%
+		RunWait, %comspec% /c qshell account %ACCESS_KEY% %SECRET_KEY% && qshell fput %BUCKET_NAME% %filename% %clipboard% %UP_HOST%
 		
 	}else{
 	    ;MsgBox, probably binary image in clipboard
@@ -52,7 +55,7 @@ CHANGE LOG
 		;MsgBox, %pathAndName%
 		SetWorkingDir, %WORKING_DIR%
 		; here, thanks for https://github.com/octan3/img-clipboard-dump
-		RunWait, %comspec% /c powershell set-executionpolicy remotesigned && powershell -sta -f dump-clipboard-png.ps1 %pathAndName%  && qshell fput %BUCKET_NAME% %filename% %pathAndName% && del %pathAndName%
+		RunWait, %comspec% /c powershell set-executionpolicy remotesigned && powershell -sta -f dump-clipboard-png.ps1 %pathAndName%  && qshell account %ACCESS_KEY% %SECRET_KEY% && qshell fput %BUCKET_NAME% %filename% %pathAndName% %UP_HOST% && del %pathAndName%
 	}
 
 	;;;; paste markdown format url to current editor
