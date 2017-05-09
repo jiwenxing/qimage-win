@@ -18,21 +18,27 @@ CHANGE LOG
 ^!V::
 
 	;;;; config start, you need to replace them by yours
-	ACCESS_KEY = G4T2TrlRFLf2-Da-IUrHJKSbVYbJTGpcwVFbz3D
-	SECRET_KEY = 0wgbpmquurY_BndFuPvDGqzlnfWHCdL8Hjz_fHJ
+	ACCESS_KEY = G4T2TrlRFLf2-Da-IUrHJKSbVYbJTGpcwBVFbz3Da
+	SECRET_KEY = 0wgbpmquurY_BndFuPvDGqzlnfWHCdL8YHjz_fHJa
 	BUCKET_NAME = fortest  ;qiniu bucket name
 	BUCKET_DOMAIN = http://7xry05.com1.z0.glb.clouddn.com/  ;qiniu domain for the image
-	WORKING_DIR = D:\blog\qiniu-image-tool-win\  ;directory that you put the qshell.exe 
+	WORKING_DIR = E:\GIT\qiniu-image-tool-win\  ;directory that you put the qshell.exe 
 	;;;; config end
 
-    ;;;; optional config
+    ;;;; optional config start
     UP_HOST = http://up.qiniu.com
+    DEBUG_MODE := false
+    ;;;; optional config end
 
 	;;;; datetime+randomNum as file name prefix
 	Random, rand, 1, 1000
 	filePrefix =  %A_yyyy%%A_MM%%A_DD%%A_Hour%%A_Min%_%rand%
+    isDebug = /c
+    if DEBUG_MODE
+        isDebug = /k
 
 	;MsgBox %clipboard%
+    
 
 	if(clipboard){
 	    ;MsgBox, probably file in clipboard
@@ -45,7 +51,7 @@ CHANGE LOG
 	    filename = %filePrefix%.%fileType%
 		; To run multiple commands consecutively, use "&&" between each
 		SetWorkingDir, %WORKING_DIR% 
-		RunWait, %comspec% /c qshell account %ACCESS_KEY% %SECRET_KEY% && qshell fput %BUCKET_NAME% %filename% %clipboard% %UP_HOST%
+		RunWait, %comspec% %isDebug% qshell account %ACCESS_KEY% %SECRET_KEY% && qshell fput %BUCKET_NAME% %filename% %clipboard% %UP_HOST%
 		
 	}else{
 	    ;MsgBox, probably binary image in clipboard
@@ -55,7 +61,7 @@ CHANGE LOG
 		;MsgBox, %pathAndName%
 		SetWorkingDir, %WORKING_DIR%
 		; here, thanks for https://github.com/octan3/img-clipboard-dump
-		RunWait, %comspec% /c powershell set-executionpolicy remotesigned && powershell -sta -f dump-clipboard-png.ps1 %pathAndName%  && qshell account %ACCESS_KEY% %SECRET_KEY% && qshell fput %BUCKET_NAME% %filename% %pathAndName% %UP_HOST% && del %pathAndName%
+		RunWait, %comspec% %isDebug% powershell set-executionpolicy remotesigned && powershell -sta -f dump-clipboard-png.ps1 %pathAndName%  && qshell account %ACCESS_KEY% %SECRET_KEY% && qshell fput %BUCKET_NAME% %filename% %pathAndName% %UP_HOST% && del %pathAndName%
 	}
 
 	;;;; paste markdown format url to current editor
