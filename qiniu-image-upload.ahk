@@ -17,24 +17,29 @@ CHANGE LOG
 
 ^!V::
 
-	;;;; config start, you need to replace them by yours
-	ACCESS_KEY = G4T2TrlRFLf2-Da-IUrHJKSbVYbJTGpcwBVFbz3Da
-	SECRET_KEY = 0wgbpmquurY_BndFuPvDGqzlnfWHCdL8YHjz_fHJa
-	BUCKET_NAME = fortest  ;qiniu bucket name
-	BUCKET_DOMAIN = http://7xry05.com1.z0.glb.clouddn.com/  ;qiniu domain for the image
-	WORKING_DIR = E:\GIT\qiniu-image-tool-win\  ;directory that you put the qshell.exe 
-	;;;; config end
+	IfExist, .\settings.ini
+	 {
+	 IniRead, ACCESS_KEY, .\settings.ini, settings, ACCESS_KEY
+	 IniRead, SECRET_KEY, .\settings.ini, settings, SECRET_KEY
+	 IniRead, BUCKET_NAME, .\settings.ini, settings, BUCKET_NAME
+	 IniRead, BUCKET_DOMAIN, .\settings.ini, settings, BUCKET_DOMAIN
+	 IniRead, WORKING_DIR, .\settings.ini, settings, WORKING_DIR
+	 IniRead, UP_HOST, .\settings.ini, settings, UP_HOST
+	 IniRead, DEBUG_MODE, .\settings.ini, settings, DEBUG_MODE
+	 }
+	else 
+	 {
+	 MsgBox settings.ini not found.
+     return
+     }
 
-    ;;;; optional config start
-    UP_HOST = http://up.qiniu.com
-    DEBUG_MODE := false
-    ;;;; optional config end
+	 ;MsgBox %UP_HOST%
 
 	;;;; datetime+randomNum as file name prefix
 	Random, rand, 1, 1000
 	filePrefix =  %A_yyyy%%A_MM%%A_DD%%A_Hour%%A_Min%_%rand%
     isDebug = /c
-    if DEBUG_MODE
+    if(DEBUG_MODE="true")
         isDebug = /k
 
 	;MsgBox %clipboard%
