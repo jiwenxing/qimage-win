@@ -2,7 +2,8 @@
 windows版本的markdown一键贴图工具，支持本地文件、截图及网络图片一键上传七牛云，并粘贴资源链接至当前编辑器，使用简单方便，从此markdown中贴图成为一种享受。
 
 # Usage
-详细的使用教程请参考：[AutoHotkey&qshell 实现图片自动上传七牛并返回markdown引用](http://jverson.com/2016/08/30/autohotkey-markdown-uploadImage/)  
+目前已更新到2.x版本，使用教程与1.x版本有较大差异，详细请参考：[windows版本markdown一键贴图工具](http://jverson.com/2017/05/28/qiniu-image-v2/)
+1.x版本使用教程请参考：[AutoHotkey&qshell 实现图片自动上传七牛并返回markdown引用](http://jverson.com/2016/08/30/autohotkey-markdown-uploadImage/)  
 mac版本请移步至：https://github.com/jiwenxing/qiniu-image-tool
 
 # Features
