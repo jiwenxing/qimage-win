@@ -5,7 +5,6 @@ a small tool that help you upload local image or screenshot to qiniu cloud and g
 url in clipboard as well as your current editor. actually you can upload any file by this script.
 
 github: https://github.com/jiwenxing/qiniu-image-tool
-blog: http://jverson.com/2016/08/30/autohotkey-markdown-uploadImage/
 
 CHANGE LOG
  2.0 -- 2017/04 -- screenshot & image copy from web both supported
@@ -23,7 +22,6 @@ CHANGE LOG
 	 IniRead, SECRET_KEY, .\settings.ini, settings, SECRET_KEY
 	 IniRead, BUCKET_NAME, .\settings.ini, settings, BUCKET_NAME
 	 IniRead, BUCKET_DOMAIN, .\settings.ini, settings, BUCKET_DOMAIN
-	 IniRead, WORKING_DIR, .\settings.ini, settings, WORKING_DIR
 	 IniRead, UP_HOST, .\settings.ini, settings, UP_HOST
 	 IniRead, DEBUG_MODE, .\settings.ini, settings, DEBUG_MODE
 	 }
@@ -33,7 +31,8 @@ CHANGE LOG
      return
      }
 
-	 ;MsgBox %UP_HOST%
+    BUCKET_DOMAIN = %BUCKET_DOMAIN%/
+    WORKING_DIR = %A_ScriptDir%\
 
 	;;;; datetime+randomNum as file name prefix
 	Random, rand, 1, 1000
