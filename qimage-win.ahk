@@ -4,9 +4,10 @@ qiniu-image-tool.ahk
 a small tool that help you upload local image or screenshot to qiniu cloud and get the markdown-style 
 url in clipboard as well as your current editor. actually you can upload any file by this script.
 
-github: https://github.com/jiwenxing/qiniu-image-tool
+github: https://github.com/jiwenxing/qimage-win
 
 CHANGE LOG
+ 2.1 -- 2018/01 -- add an optional config to support user-defined qiniu image style
  2.0 -- 2017/04 -- screenshot & image copy from web both supported
  1.0 -- 2016/08 -- basic function realized, only local files supported.
 
@@ -24,6 +25,7 @@ CHANGE LOG
 	 IniRead, BUCKET_DOMAIN, .\settings.ini, settings, BUCKET_DOMAIN
 	 IniRead, UP_HOST, .\settings.ini, settings, UP_HOST
 	 IniRead, DEBUG_MODE, .\settings.ini, settings, DEBUG_MODE
+	 IniRead, STYLE_SUFFIX, .\settings.ini, settings, STYLE_SUFFIX
 	 }
 	else 
 	 {
@@ -33,6 +35,9 @@ CHANGE LOG
 
     BUCKET_DOMAIN = %BUCKET_DOMAIN%/
     WORKING_DIR = %A_ScriptDir%\
+    if(STYLE_SUFFIX!="")
+        STYLE_SUFFIX = ?%STYLE_SUFFIX%
+
 
 	;;;; datetime+randomNum as file name prefix
 	Random, rand, 1, 1000
@@ -69,7 +74,7 @@ CHANGE LOG
 	}
 
 	;;;; paste markdown format url to current editor
-	resourceUrl = %BUCKET_DOMAIN%%filename%
+	resourceUrl = %BUCKET_DOMAIN%%filename%%STYLE_SUFFIX%
 	;MsgBox, %resourceUrl%
 	; if image file
 	if(fileType="jpg" or fileType="png" or fileType="gif" or fileType="bmp" or fileType="jpeg"){
