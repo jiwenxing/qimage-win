@@ -10,9 +10,15 @@
 
 qimage-win 是 windows 版本的 markdown 一键贴图工具，支持本地文件、截图及网络图片一键上传七牛云，并粘贴资源链接至当前编辑器，使用简单方便，从此 markdown 中贴图成为一种享受。
 
+# Change Log
+
+- v2.1  2018/01  支持自定义样式后缀
+- v2.0  2017/04  支持截图及网络复制图片上传，同时直接提供exe文件，使用更加方便
+- v1.0  2016/08  实现基本功能，支持本地文件一键上传
+
 # Usage
 
-目前已更新到2.x版本，极大的简化了使用方法，详细请参考：[windows版本markdown一键贴图工具](http://jverson.com/2017/05/28/qiniu-image-v2/)
+具体使用方法请参考：[windows版本markdown一键贴图工具](http://jverson.com/2017/05/28/qiniu-image-v2/)
 
 mac版本请移步至：https://github.com/jiwenxing/qiniu-image-tool
 
