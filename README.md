@@ -1,5 +1,5 @@
 <div align=center>
-    <p><img src="http://7xry05.com1.z0.glb.clouddn.com/201711271942_332.png" alt="qimage-win"/></p>
+    <p><img src="http://pgdgu8c3d.bkt.clouddn.com/201711271942_332.png" alt="qimage-win"/></p>
     <a target="_blank" href="https://travis-ci.org/cdoco/grank" title="platform"><img src="https://img.shields.io/badge/platform-win--32%20%7C%20win--64-lightgrey.svg"></a>
     <a target="_blank" href="https://github.com/jiwenxing/qiniu-image-tool-win/archive/v2.0.zip" title="download"><img src="https://img.shields.io/badge/download-5.06M%20v2.0-yellowgreen.svg"></a>
     <a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
